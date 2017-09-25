@@ -1,4 +1,8 @@
 apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'jacoco'
+
+mainClassName = "com.github.leosilvadev.transactions.Application"
 
 repositories {
     jcenter()
@@ -7,10 +11,12 @@ repositories {
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.18'
     compile 'org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE'
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
-    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.1'
-// https://mvnrepository.com/artifact/org.mockito/mockito-core
-    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.10.0'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.1'
 
+    testCompile 'io.rest-assured:rest-assured:3.0.3'
+    testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE'
+    testCompile 'org.mockito:mockito-core:2.10.0'
     testCompile 'junit:junit:4.12'
 }
+
+check.dependsOn clean, test, jacocoTestReport

@@ -45,14 +45,4 @@ public class TransactionsSummary {
         return count;
     }
 
-    @Override
-    public String toString() {
-        return "TransactionsSummary{" +
-                "sum=" + sum +
-                ", avg=" + avg +
-                ", max=" + max +
-                ", min=" + min +
-                ", count=" + count +
-                '}';
-    }
 }

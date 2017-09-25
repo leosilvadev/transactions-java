@@ -58,6 +58,7 @@ public class TransactionManagerTest {
         manager.register(new Transaction(14.0, Instant.now().minusSeconds(58)));
         manager.register(new Transaction(15.0, Instant.now().minusSeconds(58)));
 
+        // Waiting for the latest transactions to become invalid
         Thread.sleep(5_000);
         TransactionsSummary summary = manager.getSummary();
 

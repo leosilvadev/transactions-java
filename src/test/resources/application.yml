@@ -1,0 +1,6 @@
+local:
+  server:
+    port: 9999
+
+transactions:
+  defaultThresholdSeconds: 60
